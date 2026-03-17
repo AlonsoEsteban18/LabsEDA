@@ -1,6 +1,9 @@
 package LabEda;
+import edu.princeton.cs.algs4.DoublingRatio;
+import edu.princeton.cs.algs4.Out;
 import edu.princeton.cs.algs4.StdRandom;
-import java.util.HashSet;
+import edu.princeton.cs.algs4.StopwatchCPU;
+
 public class GeneradorInstancias {
 
     }
