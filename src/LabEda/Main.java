@@ -5,24 +5,26 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Stopwatch;
 import edu.princeton.cs.algs4.StopwatchCPU;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
-public static List<Integer> generarLista(int n){
-    List<Integer> lista = new ArrayList<>();
-    boolean[] usado = new boolean[n*4];
-    while(lista.size()<n){
-        int num = StdRandom.uniform(0,n*4);
-        if(!usado[num]){
-            usado[num] = true;
-            lista.add(num);
-        }
-    }
-    return lista;
-}
 
 public class Main {
+    public static List<Integer> generarLista(int n){
+        List<Integer> lista = new ArrayList<>();
+        boolean[] usado = new boolean[n*4];
+        while(lista.size()<n){
+            int num = StdRandom.uniform(0,n*4);
+            if(!usado[num]){
+                usado[num] = true;
+                lista.add(num);
+            }
+        }
+        return lista;
+    }
     public static void main(String[] args){
+        StdRandom.setSeed(12345);
         int[] tamanios = {32, 64, 128, 256, 512, 1024};
         for(int n : tamanios){
             Out out = new Out("datos_ "+n+".csv");
