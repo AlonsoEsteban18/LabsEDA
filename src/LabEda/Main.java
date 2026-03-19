@@ -35,15 +35,21 @@ public class Main {
                 List<Integer> copia3 = new ArrayList<>(lista);
 
                 StopwatchCPU t1 = new StopwatchCPU();
-                Result.cuentaPares(n, copia1 , k);
+                for(int r=0;r<100000;r++){
+                    Result.cuentaPares(n, copia1 , k);
+                }
                 double tiempo1 = t1.elapsedTime();
 
                 StopwatchCPU t2 = new StopwatchCPU();
-                Result.cuentaPares2(n, copia2, k);
+                for(int r=0;r<100000;r++){
+                    Result.cuentaPares2(n, copia2, k);
+                }
                 double tiempo2 = t2.elapsedTime();
 
                 StopwatchCPU t3 = new StopwatchCPU();
+                for(int r=0;r<100000;r++){
                 Result.cuentaPares3(n, copia3, k);
+                }
                 double tiempo3 = t3.elapsedTime();
 
                 out.println(tiempo1 + "," + tiempo2+ "," + tiempo3);
