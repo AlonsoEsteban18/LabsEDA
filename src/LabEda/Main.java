@@ -30,7 +30,7 @@ public class Main {
             for(int i=0; i<100; i++){
                List<Integer> lista = generarLista(n);
                int k = StdRandom.uniformInt(1, (n/4) + 1);
-               List<Integer> copia1 = new ArrayList<>(lista);
+                List<Integer> copia1 = new ArrayList<>(lista);
                 List<Integer> copia2 = new ArrayList<>(lista);
                 List<Integer> copia3 = new ArrayList<>(lista);
 
