@@ -5,7 +5,6 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StopwatchCPU;
 import edu.princeton.cs.algs4.DoublingRatio;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 
@@ -23,31 +22,32 @@ public class Main {
         return lista;
     }
     public static void main(String[] args){
-        StdRandom.setSeed(12345);
+
         int[] tamanios = {32, 64, 128, 256, 512, 1024};
         for(int n : tamanios){
-            Out out = new Out("datos_ "+n+".csv");
+            StdRandom.setSeed(12345+n);
+            Out out = new Out("datos_"+n+".csv");
             for(int i=0; i<100; i++){
                List<Integer> lista = generarLista(n);
-               int k = StdRandom.uniformInt(1, n);
+               int k = StdRandom.uniformInt(1, (n/4) + 1);
                List<Integer> copia1 = new ArrayList<>(lista);
                 List<Integer> copia2 = new ArrayList<>(lista);
                 List<Integer> copia3 = new ArrayList<>(lista);
 
                 StopwatchCPU t1 = new StopwatchCPU();
-                for(int r=0;r<100000;r++){
+                for(int r=0;r<10000;r++){
                     Result.cuentaPares(n, copia1 , k);
                 }
                 double tiempo1 = t1.elapsedTime();
 
                 StopwatchCPU t2 = new StopwatchCPU();
-                for(int r=0;r<100000;r++){
+                for(int r=0;r<10000;r++){
                     Result.cuentaPares2(n, copia2, k);
                 }
                 double tiempo2 = t2.elapsedTime();
 
                 StopwatchCPU t3 = new StopwatchCPU();
-                for(int r=0;r<100000;r++){
+                for(int r=0;r<10000;r++){
                 Result.cuentaPares3(n, copia3, k);
                 }
                 double tiempo3 = t3.elapsedTime();
